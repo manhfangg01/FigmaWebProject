@@ -1,8 +1,8 @@
 /* khôi phục lại cỡ chữ mặc định theo rem */
 body {
-font-size: 1.6rem;
+font-size: 1.6rem;    /* 1rem=10px*/
   font-family: "Poppins", sans-serif;
-  height: 10000px;
+  height: 10000px;  /*Tạo ra thanh cuộn cho trang để test các chức năng khi cuộn */
 }
 /* =================common================== */
 a {
@@ -10,8 +10,8 @@ a {
 }
 
 .btn {
-  display: inline-block;
-  min-width: 118px;
+  display: inline-block;  /*Không chiếm 1 dòng như block nhưng vẫn dùng được padding */
+  min-width: 118px;  /*Xác định chiều rộng tối thiểu của nút */ 
   padding: 0 16px;
   line-height: 50px;
   color: #fff;
@@ -24,8 +24,8 @@ a {
 
 .main-content {
   width: 1170px;
-  max-width: calc(100% - 48px);
-  margin-left: auto;
+  max-width: calc(100% - 48px);   /*Nếu như không có dấu cách ở giữa các toán tử -> thì sẽ bị lỗi */ /* Giới hạn chiều rộng tối đa của phần tử  -> tạo ra responsive cho website khi bị co lại */
+  margin-left: auto;   /*2 dòng này và dòng dưới tạo nên khoảng cách tự nhiên của content với bìa  */
   margin-right: auto;
 }
 
@@ -36,9 +36,10 @@ a {
 
 .header.fixed {
   position: sticky;
-  top: -28px;
+  top: -28px;   ;     /*Đến khoảng âm 28px để bỏ khoảng trắng bên trên đi khi mà neo lại trên webpage  */
 }
 .header .body {
+  /*Tác động vào Class body của Class header */ /*Phải làm rõ điểm này do là header có thể là duy nhất nhưng .body thì không*/
   display: flex;
   align-items: center;
   padding: 36px 0 8px;
@@ -56,6 +57,9 @@ a {
   color: #5f5b53;
   font-size: 1.6rem;
   padding: 8px 21px;
+  /*Nên dùng padding thay vì margin bởi khi lia chuột vào thì nó có thể dễ dàng hiện lên cursor -> tăng trải nghiệm người dùng */
+  /* do các phần tử cách nhau 42px rồi nên chỉ cần cho mỗi thằng cách nhau 
+
 }
 
 .nav li.active a,
@@ -65,7 +69,7 @@ a {
   text-shadow: 1px 0 0 currentColor;
 }
 
-.nav li.active a::after {
+.nav li.active a::after {     /* tạo ra thằng hình chữ nhật dưới các nút có active class */
   position: absolute;
   left: 21px;
   bottom: 6px;
